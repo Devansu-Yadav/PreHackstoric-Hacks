@@ -15,19 +15,13 @@ function App() {
   }
   
   return (
-    <div id="app">
-      <NavBar />
-      <Globe />
-      
-    
     <div className="m-0">
-       {/* <NavBar />
-      <Globe /> */}
-      <FlashCard />
+       {/* <NavBar /> */}
+       {/* <Globe /> */}
+      {/* <FlashCard /> */}
       {/* <LandingPage /> */}
       {/* <GetInfo /> */}
       {/* <NavBar /> */}
-    </div>
    </div> 
   );
 }
