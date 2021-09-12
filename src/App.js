@@ -5,6 +5,7 @@ import Globe from "./components/dino-globe";
 import React from "react"
 import LandingPage from "./components/Landing Page/LandingPage";
 import GetInfo from "./components/Get User Info/GetInfo";
+import FlashCard from "./components/Flash Card/FlashCard";
 
 function App() {
   const { isLoading } = useAuth0();
@@ -16,8 +17,9 @@ function App() {
   return (
     
     <div className="m-0">
-       <NavBar />
-      <Globe />
+       {/* <NavBar />
+      <Globe /> */}
+      <FlashCard />
       {/* <LandingPage /> */}
       {/* <GetInfo /> */}
       {/* <NavBar /> */}
