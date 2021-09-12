@@ -3,7 +3,8 @@ import ReactGlobe from "react-globe";
 
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
-import Button from "./Button";
+// import Button from "./Button";
+import FlashCard from "./Flash Card/FlashCard";
 
 // import defaultMarkers from "./markers.js";
 
@@ -76,22 +77,23 @@ function Globe() {
   return (
     <div>
       {details && (
-        <div
-          style={{
-            background: "white",
-            position: "absolute",
-            fontSize: 20,
-            bottom: 0,
-            right: 0,
-            padding: 12
-          }}
-        >
-          <p>{details}</p>
-          <p>
-            EVENT: type={event.type}, species={event.species}, position=
-            {JSON.stringify(event.pointerEventPosition)})
-          </p>
-        </div>
+        // <div
+        //   style={{
+        //     background: "white",
+        //     position: "absolute",
+        //     fontSize: 20,
+        //     bottom: 0,
+        //     right: 0,
+        //     padding: 12
+        //   }}
+        // >
+        //   <p>{details}</p>
+        //   <p>
+        //     EVENT: type={event.type}, species={event.species}, position=
+        //     {JSON.stringify(event.pointerEventPosition)})
+        //   </p>
+        // </div>
+        <FlashCard dinoName={event.species}/>
       )}
 
       {/* <button></button> */}
