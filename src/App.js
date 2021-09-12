@@ -14,13 +14,12 @@ function App() {
   }
   
   return (
-    <div id="app">
-      <NavBar />
-      <Globe />
     
     <div className="m-0">
+       <NavBar />
+      <Globe />
       {/* <LandingPage /> */}
-      <GetInfo />
+      {/* <GetInfo /> */}
       {/* <NavBar /> */}
     </div>
   );
