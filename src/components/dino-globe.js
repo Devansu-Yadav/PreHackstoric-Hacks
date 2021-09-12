@@ -3,6 +3,7 @@ import ReactGlobe from "react-globe";
 
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
+import Button from "./Button";
 
 // import defaultMarkers from "./markers.js";
 
@@ -37,6 +38,14 @@ function Globe() {
   const [details, setDetails] = useState(null);
   const [listintervals, updateListIntervals] = useState([]);
 
+  function onButtonClickSendPeriod(period) {
+    fetch("https://dinodb.azurewebsites.net/api/dino/" + period)
+    .then((response) => response.json())
+    .then((result) => structureDinoData(result))
+    .then((dinoMarkers) => setMarkers(dinoMarkers))
+    .catch((error) => console.log("error", error));
+  }
+
   useEffect(() => {
     fetch("https://dinodb.azurewebsites.net/api/dino/list")
       .then((response) => response.json())
@@ -44,15 +53,6 @@ function Globe() {
       .catch((error) => console.log("error", error));
   }, []);
 
-  useEffect(() => {
-    fetch("https://dinodb.azurewebsites.net/api/dino/Albian")
-      .then((response) => response.json())
-      .then((result) => structureDinoData(result))
-      // .then((dinos) => console.log(dinos))
-      .then((dinoMarkers) => setMarkers(dinoMarkers))
-      .catch((error) => console.log("error", error));
-    // setMarkers(defaultMarkers);
-  }, []);
 
   function onClickMarker(marker, markerObject, event) {
     setEvent({
@@ -95,6 +95,12 @@ function Globe() {
       )}
 
       {/* <button></button> */}
+
+      {
+          listintervals.map(function(period) {
+            return <button className="btn" onClick={() => onButtonClickSendPeriod(period)}>{period}</button>
+          })
+      }
 
       <ReactGlobe
         height="70vh"

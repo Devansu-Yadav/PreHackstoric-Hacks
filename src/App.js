@@ -17,12 +17,13 @@ function App() {
     <div id="app">
       <NavBar />
       <Globe />
-    
+      
     <div className="m-0">
       {/* <LandingPage /> */}
       <GetInfo />
       {/* <NavBar /> */}
     </div>
+   </div> 
   );
 }
 
