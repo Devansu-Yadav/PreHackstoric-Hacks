@@ -3,6 +3,7 @@ import Loading from "./components/loading";
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react"
 import LandingPage from "./components/Landing Page/LandingPage";
+import GetInfo from "./components/Get User Info/GetInfo";
 
 function App() {
   const { isLoading } = useAuth0();
@@ -14,7 +15,8 @@ function App() {
   return (
     
     <div className="m-0">
-      <LandingPage />
+      {/* <LandingPage /> */}
+      <GetInfo />
       {/* <NavBar /> */}
     </div>
   );

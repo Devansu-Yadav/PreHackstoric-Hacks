@@ -11,6 +11,11 @@ html, body {
     font-family: 'Luckiest Guy', cursive;
 }
 
+.bg-teal {
+    background-color: #004261;
+    color: #fff;
+}
+
 .btn {
     padding: 0.5rem 1rem;
     background-color: #7BC5B9;
