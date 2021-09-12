@@ -16,8 +16,8 @@ function App() {
   
   return (
     <div className="m-0">
-       {/* <NavBar /> */}
-       {/* <Globe /> */}
+       <NavBar />
+       <Globe />
       {/* <FlashCard /> */}
       {/* <LandingPage /> */}
       {/* <GetInfo /> */}

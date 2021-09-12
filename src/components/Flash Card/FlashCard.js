@@ -1,35 +1,34 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const FlashCard = ({dinoName}) => {
-    const cardData = {};
+    var [imgsrc, updateImgSrc] = useState("https://cdn.discordapp.com/attachments/884791455414108170/886566864036188160/Asset_12x.png");
+    var [dinoText, updateDinoText] = useState("No Data found for Dino!");
+    var [ross, updateRoss] = useState("");
 
-    useEffect(() => {
-        fetch("https://dinodb.azurewebsites.net/api/dino/flashcard/" + dinoName)
-        .then(function(response) {
-            if(response.status === 500) {
-                return (
-                    <div>
-                        No Data Found for Dinosaur!
-                    </div>
-                )
-            }
-            return response.json();
-        })
-        .then((data) => cardData = {
-            ross: data.ross,
-            text: data.card,
-            dinoImg: data.image
-        })
-        .catch((error) => console.log(error));
-    }, [])
+        useEffect(() => {
+            fetch("https://dinodb.azurewebsites.net/api/dino/flashcard/" + dinoName)
+            .then(function(response) {
+                // if(response.status === 500) {
+                //     updateDinoText("No Data Found for Dinosaur!");
+                //     // updateImgSrc("https://cdn.discordapp.com/attachments/884791455414108170/886566864036188160/Asset_12x.png");
+                // }
+                return response.json();
+            })
+            .then(function(data) {
+                updateRoss(data.ross);
+                updateDinoText(data.card);
+                updateImgSrc(data.image);
+            })
+            .catch((error) => updateDinoText("No data found for Dino!!"))
+        });
 
     return (
         <div className="flash-card">
-            <img src={cardData.dinoImg} alt="dino pic" />
-            <p className="dino-text">{cardData.text}</p>
+            <img src={imgsrc} alt="dino pic" />
+            <p className="dino-text">{dinoText}</p>
         </div>
     );
   };
   
-  export default FlashCard;
+export default FlashCard;
   

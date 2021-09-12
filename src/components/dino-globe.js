@@ -76,6 +76,23 @@ function Globe() {
 
   return (
     <div>
+      {/* <button></button> */}
+
+      {
+          listintervals.map(function(period) {
+            return <button className="btn-globe" onClick={() => onButtonClickSendPeriod(period)}>{period}</button>
+          })
+      }
+
+      <ReactGlobe
+        height="70vh"
+        markers={markers}
+        options={options}
+        width="100vw"
+        onClickMarker={onClickMarker}
+        onDefocus={onDefocus}
+      />
+      
       {details && (
         // <div
         //   style={{
@@ -95,23 +112,6 @@ function Globe() {
         // </div>
         <FlashCard dinoName={event.species}/>
       )}
-
-      {/* <button></button> */}
-
-      {
-          listintervals.map(function(period) {
-            return <button className="btn" onClick={() => onButtonClickSendPeriod(period)}>{period}</button>
-          })
-      }
-
-      <ReactGlobe
-        height="70vh"
-        markers={markers}
-        options={options}
-        width="100vw"
-        onClickMarker={onClickMarker}
-        onDefocus={onDefocus}
-      />
     </div>
   );
 }

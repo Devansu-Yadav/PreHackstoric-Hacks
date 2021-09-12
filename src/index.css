@@ -26,12 +26,40 @@ html, body {
     font-size: 1.2rem;
 }
 
+.btn-globe {
+    padding: 0.3rem 0.8rem;
+    background-color: #7BC5B9;
+    border: 0.2rem solid #099696;
+    border-radius: 5px;
+
+    color:#004261;
+    font-size: 0.8rem;
+}
+
 .flash-card {
     padding: 0.5rem 1rem;
     background-color: #7BC5B9;
     border: 0.4rem solid #099696;
     border-radius: 10px;
 
+    width: 30%;
+
     color:#004261;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1.5rem;
+
+    position: absolute;
+    top: 50%;
+    transform: translate(3%, 74%);
+}
+
+.flash-card > img {
+    height: 10rem;
+    margin-bottom: 1rem;
 }
