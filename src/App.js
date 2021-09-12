@@ -3,6 +3,7 @@ import Loading from "./components/loading";
 import { useAuth0 } from "@auth0/auth0-react";
 import Globe from "./components/dino-globe";
 import React from "react"
+import LandingPage from "./components/Landing Page/LandingPage";
 
 function App() {
   const { isLoading } = useAuth0();
@@ -15,6 +16,11 @@ function App() {
     <div id="app">
       <NavBar />
       <Globe />
+    
+      <div className="m-0">
+        <LandingPage />
+        {/* <NavBar /> */}
+      </div>
     </div>
   );
 }
