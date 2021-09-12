@@ -25,3 +25,13 @@ html, body {
     color:#004261;
     font-size: 1.2rem;
 }
+
+.flash-card {
+    padding: 0.5rem 1rem;
+    background-color: #7BC5B9;
+    border: 0.4rem solid #099696;
+    border-radius: 10px;
+
+    color:#004261;
+    font-size: 1.2rem;
+}
